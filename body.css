@@ -1,11 +1,19 @@
 html {
     width: 100vw;
-    
+    background-color: #111111;
 }
 body{
     /* add fallback: ; */
     font-family: 'Rubik';
     width: 100%;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     overflow-X: hidden;
+
 }
+span.highlight {
+    color: #fcb500;
+    display: block;
+  }
+  
