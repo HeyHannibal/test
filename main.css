@@ -54,7 +54,7 @@ header section {
 header section h1 {
   color: white;
   font-weight: bold;
-  font-size: calc(9vw + 1vh);
+  font-size: calc(9vw);
   line-height: 90%;
   margin: 0;
   margin-top: auto;
@@ -67,33 +67,15 @@ header h2 {
   white-space: nowrap;
   margin: 0;
 }
-header section div {
-  margin-top: auto;
-  width: 25vw;
-  margin-bottom: 4vw;
-}
-header section div p {
-  margin: 0;
-}
 
 @media screen and (max-width: 900px) {
-  header section div {
-    width: 48vw;
-    margin-top: 5rem;
-  }
-  h1 {
+  header section div:first-of-type{
     position: absolute;
-    top: 0;
-
-    transform: translateY(15%);
+    top:0;
+    width: 50vw
   }
-  header section p:first-of-type {
-    margin-bottom: 6vh;
-  }
-  header section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  header section h1{
+    font-size:12vw ;
   }
 }
 
@@ -102,15 +84,18 @@ header section div p {
     height: calc(20vh + 10vw);
     transform: translate(-80%, 50%) rotate(20deg);
   }
-  header section div {
-    width: 48vw;
-    margin-top: 0rem;
+  header section p{
+    font-size: 1rem;
   }
-  header section h1{
-    font-size: 12vw;
-  } 
-  header section p:first-of-type {
-    margin-bottom: 6vh;
-    margin-top: 12vw;
+  header section div:last-of-type{
+    align-self: center;
+    margin-top: 3rem;
+  }
+  header section h2{
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  header section p{
+    margin: 0;
   }
 }
