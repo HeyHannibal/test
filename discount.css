@@ -1,35 +1,33 @@
 section#discount {
-  background-color: #111111;
   color: #fff;
-  height: 100vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 h3 {
-  font-size: calc(1rem + 2vw);
+  font-size: calc(1rem + 1.5vw);
   text-align: center;
   padding: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3vw;
 }
-div#price{
-    font-size: calc(2rem + 1vw);
-    display: inline;
-    margin-bottom:-5rem;
+div#price {
+  font-size: calc(2rem + 1vw);
+  display: inline;
 }
-div#price p{
-    vertical-align: middle;
-    display: inline;
+div#price p {
+  vertical-align: middle;
+  display: inline;
 }
-div#price p:first-child{
-    font-size: calc(1.5rem + 1vw);
-    text-decoration: line-through;
-    color: #adadad;
+div#price p:first-child {
+  font-size: calc(1.5rem + 1vw);
+  text-decoration: line-through;
+  color: #adadad;
 }
 
 div#productInfo {
   width: 100%;
-  
+  max-height: 35vh;
   justify-self: center;
   display: flex;
   justify-content: center;
@@ -59,7 +57,7 @@ aside p {
 }
 
 div#product {
-  min-width: max(40%, 42vw);
+  min-width: max(38%, 38vw);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,12 +65,35 @@ div#product {
 
 div#product img {
   transform: rotate(-90deg);
-  width: calc(100px + 4vw);
+  width: calc(90px + 4vw);
   transition: transform 0.5s ease;
 }
-
-
-
+div#order {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  white-space: nowrap;
+}
+div#order p:first-child {
+  font-size: calc(1.5rem + 0.5vw);
+  margin: 0;
+}
+div#order p:last-of-type {
+  font-size: calc(1rem + 0.5vw);
+  margin-top: 4px;
+}
+div#order button {
+  margin-top: 2rem;
+  height: 3rem;
+  width: 15rem;
+  align-self: center;
+  border: none;
+  border-radius: 8px;
+  font-family: "Rubik";
+  font-size: 1rem;
+  background-color: #fcb500;
+}
 @media screen and (max-width: 900px) {
   div#product img {
     transform: rotate(-50deg);
@@ -91,8 +112,11 @@ div#product img {
   div#product {
     min-width: 30%;
   }
-  div#price{
+  div#price {
     margin-bottom: 4rem;
+  }
+  div#order {
+    margin-top: 10vh;
   }
 }
 
@@ -104,32 +128,8 @@ div#product img {
     gap: 0;
   }
 }
-
-div#order{
-    margin: 5rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-text-align: center;
-white-space: nowrap;
-}
-div#order p:first-child{
-    font-size: 2rem;
-    margin: 0;
-}
-div#order p:last-of-type{
-    font-size: 1.5rem;
-    margin-top: 4px;
-
-}
-div#order button{
-    margin-top: 2rem;
-    height: 3rem;
-    width: 15rem;
-    align-self: center;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Rubik';
-    font-size: 1rem;
-    background-color: #fcb500;
+@media screen and (max-width: 450px) {
+  h3 {
+    padding: 1rem;
+  }
 }
