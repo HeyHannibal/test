@@ -1,13 +1,102 @@
-nav {
+header {
   position: sticky;
   left: 0;
   top: 0;
   height: 7vh;
   width: 100vw;
   z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 0 2rem;
+  gap: 1.5rem;
   background-color: #111111;
 }
-header {
+header a {
+  text-decoration: none;
+  color: #fff;
+  white-space: nowrap;
+}
+
+nav {
+  width: 80%;
+}
+div#navMenu {
+  display: flex;
+  flex-direction: column;
+}
+ul {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-evenly;
+}
+nav input,
+label {
+  display: none;
+}
+
+span.material-symbols-outlined {
+  color: #fff;
+  font-size: 2.5rem;
+  transform: translate(2px, -0.8rem);
+}
+@media screen and (max-width: 1000px) {
+  nav {
+    position: relative;
+    margin-left: auto;
+    width: fit-content;
+  }
+  nav span {
+    position: absolute;
+    top: 0;
+  }
+  div#navMenu {
+    height: 1rem;
+    width: 3rem;
+  }
+
+  nav input {
+    display: block;
+    opacity: 0;
+    margin-bottom: 1.2rem;
+  }
+  nav label {
+    display: block;
+  }
+  nav ul li {
+    padding: 6px;
+    left: 0px;
+    margin: -9% 0rem;
+    transform: translateY(-15px);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.1s ease, margin 0.2s ease;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    align-self: center;
+    background-color: #111111;
+    padding: 0 1.5rem;
+  }
+  #menuControl:checked ~ ul li {
+    margin: 0.5rem 0;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #menuControl:checked ~ ul {
+    padding: 1.5rem;
+  }
+}
+
+main {
   display: flex;
   width: 100vw;
   background-color: #fcda28;
@@ -22,6 +111,7 @@ div#heroImage {
   height: 100%;
   margin-left: 1rem;
   flex: 1 1;
+
 }
 div#heroImage img {
   position: absolute;
@@ -42,7 +132,7 @@ img.hero:nth-child(3) {
   transform: translate(-90%, 40%);
 }
 
-header section {
+main section {
   width: 60%;
   z-index: 10;
   height: calc(60vh + 12vw);
@@ -51,7 +141,7 @@ header section {
   flex-direction: column;
   justify-content: center;
 }
-header section h1 {
+main section h1 {
   color: white;
   font-weight: bold;
   font-size: calc(9vw);
@@ -59,43 +149,57 @@ header section h1 {
   margin: 0;
   margin-top: auto;
 }
-header section p {
+main section p {
   font-size: calc(1rem + 0.5vw);
 }
-header h2 {
+main h2 {
   font-size: calc(1rem + 1.5vw);
   white-space: nowrap;
   margin: 0;
 }
-
+main section div:last-of-type {
+  position: relative;
+  bottom: -100px;
+}
 @media screen and (max-width: 900px) {
-  header section div:first-of-type{
+  main section div:first-of-type {
     position: absolute;
-    top:0;
-    width: 50vw
+    top: 0;
+    width: 50vw;
   }
-  header section h1{
-    font-size:12vw ;
+  main section h1 {
+    font-size: 12vw;
+  }
+  img.hero:nth-child(2) {
+    height: calc(30vh + 18vw);
+    transform: translate(-50%, -50%);
   }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 600px) {
   img.hero:nth-child(3) {
     height: calc(20vh + 10vw);
     transform: translate(-80%, 50%) rotate(20deg);
   }
-  header section p{
+  main section{
+    justify-content: space-between;
+  }
+  main section p {
     font-size: 1rem;
   }
-  header section div:last-of-type{
-    align-self: center;
-    margin-top: 3rem;
+  main section div:last-of-type {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: fit-content;
   }
-  header section h2{
-    font-size: 1.2rem;
+  main section h2 {
+    font-size: calc(1rem + 2vw);
     margin: 0;
   }
-  header section p{
+  main section p {
     margin: 0;
   }
+  
 }
