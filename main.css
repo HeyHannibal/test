@@ -97,13 +97,12 @@ span#cartItem p{ margin: 1px;}
     width: max-content;
     align-self: center;
   }
-  #menuControl:checked ~ ul li, nav:hover ul li  {
+  #menuControl:checked ~ ul li  {
     margin: 0.5rem 0;
     opacity: 1;
     transform: translateY(0);
-    pointer-events: all;
   }
-  #menuControl:checked ~ ul, nav:hover ul {
+  #menuControl:checked ~ ul{
     pointer-events: all;
     padding: 1.5rem;
     background-color: #111111;
@@ -120,7 +119,6 @@ main {
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  overflow: hidden;
 }
 div#heroImage {
   height: 100%;
@@ -226,5 +224,8 @@ main section div:last-of-type {
 @media screen and (max-width: 500px) {
   main section div:last-of-type {
     top: 55%;
+  }
+  header{
+    padding: 2rem 1rem;
   }
 }
