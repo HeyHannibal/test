@@ -1,3 +1,5 @@
+/* || Header and Navigation */
+
 header {
   position: sticky;
   left: 0;
@@ -5,12 +7,12 @@ header {
   height: 7vh;
   width: 100vw;
   z-index: 15;
+  padding: 2rem 4rem;
+  gap: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
   box-sizing: border-box;
-  padding: 0 2rem;
-  gap: 1.5rem;
   background-color: #111111;
 }
 header a {
@@ -29,7 +31,6 @@ div#navMenu {
 ul {
   margin: 0;
   padding: 0;
-
   display: flex;
   list-style: none;
   align-items: center;
@@ -44,6 +45,9 @@ span.material-symbols-outlined {
   color: #fff;
   font-size: 2.5rem;
   transform: translate(2px, -0.8rem);
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
 }
 @media screen and (max-width: 1000px) {
   nav {
@@ -52,18 +56,17 @@ span.material-symbols-outlined {
     width: fit-content;
   }
   nav span {
-    position: absolute;
     top: 0;
+    position: absolute;
   }
   div#navMenu {
     height: 1rem;
     width: 3rem;
   }
-
   nav input {
-    display: block;
     opacity: 0;
     margin-bottom: 1.2rem;
+    display: block;
   }
   nav label {
     display: block;
@@ -72,51 +75,55 @@ span.material-symbols-outlined {
     padding: 6px;
     left: 0px;
     margin: -9% 0rem;
-    transform: translateY(-15px);
-    pointer-events: none;
+    transform: translateY(-40px);
     opacity: 0;
     transition: opacity 0.1s ease, margin 0.2s ease;
+    pointer-events: none;
   }
   nav ul {
+    padding: 0 1.5rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: max-content;
     align-self: center;
-    background-color: #111111;
-    padding: 0 1.5rem;
   }
-  #menuControl:checked ~ ul li {
+  #menuControl:checked ~ ul li,
+  #navMenu:hover  ul li {
     margin: 0.5rem 0;
     opacity: 1;
     transform: translateY(0);
+    pointer-events: all;
+
   }
-  #menuControl:checked ~ ul {
+  #menuControl:checked ~ ul,
+  #navMenu:hover  ul {
     padding: 1.5rem;
+    background-color: #111111;
   }
 }
+/* || Hero Image */
 
 main {
-  display: flex;
   width: 100vw;
+  padding: 2rem;
+  padding-left: 5vw;
+  display: flex;
   background-color: #fcda28;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  padding: 2rem;
-  padding-left: 5vw;
 }
 div#heroImage {
-  position: relative;
   height: 100%;
   margin-left: 1rem;
   flex: 1 1;
-
+  position: relative;
 }
 div#heroImage img {
-  position: absolute;
   top: 50%;
   left: 50%;
+  position: absolute;
   transition: transform 1s ease;
 }
 img.hero:first-child {
@@ -132,6 +139,8 @@ img.hero:nth-child(3) {
   transform: translate(-90%, 40%);
 }
 
+/* || Hero Image Text */
+
 main section {
   width: 60%;
   z-index: 10;
@@ -142,11 +151,11 @@ main section {
   justify-content: center;
 }
 main section h1 {
-  color: white;
-  font-weight: bold;
   font-size: calc(9vw);
   line-height: 90%;
   margin: 0;
+  color: white;
+  font-weight: bold;
   margin-top: auto;
 }
 main section p {
@@ -154,21 +163,21 @@ main section p {
 }
 main h2 {
   font-size: calc(1rem + 1.5vw);
-  white-space: nowrap;
   margin: 0;
 }
 main section div:last-of-type {
-  position: relative;
   bottom: -100px;
+  position: relative;
 }
+
 @media screen and (max-width: 900px) {
   main section div:first-of-type {
-    position: absolute;
     top: 0;
     width: 50vw;
+    position: absolute;
   }
   main section h1 {
-    font-size: 12vw;
+    font-size: 10vw;
   }
   img.hero:nth-child(2) {
     height: calc(30vh + 18vw);
@@ -181,25 +190,33 @@ main section div:last-of-type {
     height: calc(20vh + 10vw);
     transform: translate(-80%, 50%) rotate(20deg);
   }
-  main section{
+  main section {
     justify-content: space-between;
   }
   main section p {
     font-size: 1rem;
   }
   main section div:last-of-type {
-    position: absolute;
     left: 0;
     top: 50%;
-    transform: translate(0, -50%);
+    transform: translate(0, -40%);
+    position: absolute;
     height: fit-content;
   }
   main section h2 {
-    font-size: calc(1rem + 2vw);
+    font-size: calc(1rem + 1.5vw);
     margin: 0;
   }
   main section p {
     margin: 0;
   }
-  
+  main section h1 {
+    font-size: 12vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main section div:last-of-type {
+    top: 55%;
+  }
 }
