@@ -84,9 +84,9 @@ span#cartItem p{ margin: 1px;}
     padding: 6px;
     left: 0px;
     margin: -9% 0rem;
-    transform: translateY(-40px);
+    transform: translateY(-60px);
     opacity: 0;
-    transition: opacity 0.1s ease, margin 0.2s ease;
+    transition: opacity 0.1s ease, margin 0.2s ease, transform 0.3s ease;
     pointer-events: none;
   }
   nav ul {
@@ -97,16 +97,14 @@ span#cartItem p{ margin: 1px;}
     width: max-content;
     align-self: center;
   }
-  #menuControl:checked ~ ul li,
-  #navMenu:hover  ul li {
+  #menuControl:checked ~ ul li, nav:hover ul li  {
     margin: 0.5rem 0;
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
-
   }
-  #menuControl:checked ~ ul,
-  #navMenu:hover  ul {
+  #menuControl:checked ~ ul, nav:hover ul {
+    pointer-events: all;
     padding: 1.5rem;
     background-color: #111111;
   }
@@ -122,6 +120,7 @@ main {
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+  overflow: hidden;
 }
 div#heroImage {
   height: 100%;
